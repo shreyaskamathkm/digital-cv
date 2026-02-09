@@ -1,28 +1,28 @@
 import Section from './Section';
 import { motion } from 'framer-motion';
-import { Code, Terminal, Cloud, Layers } from 'lucide-react';
+import { Code, Terminal, Cloud, Layers, Database, Workflow, CheckCircle } from 'lucide-react';
 
 const skillsData = [
+    {
+        category: "Frameworks & Libraries",
+        icon: <Terminal size={20} />,
+        skills: ["PyTorch", "PyTorch Lightning", "Ray (Distributed)", "ONNX", "Voxel51", "TensorFlow", "Keras", "OpenCV", "NumPy", "Pandas", "Scikit-Learn"]
+    },
+    {
+        category: "Engineering Practices",
+        icon: <CheckCircle size={20} />,
+        skills: ["TDD", "pytest", "CI/CD", "Git/GitHub", "Docker", "Singularity", "Agile"]
+    },
     {
         category: "Programming Languages",
         icon: <Code size={20} />,
         skills: ["Python", "MATLAB", "C/C++"]
     },
     {
-        category: "Software & Libraries",
-        icon: <Terminal size={20} />,
-        skills: ["PyTorch", "TensorFlow", "Keras", "NumPy", "Pandas", "OpenCV", "Scikit-Learn", "Matplotlib", "GitHub", "Singularity", "Docker"]
-    },
-    {
         category: "Cloud Platforms",
         icon: <Cloud size={20} />,
-        skills: ["AWS EC2", "HPC"]
+        skills: ["AWS EC2", "AWS Bedrock", "AWS S3", "AWS Rekognition", "AWS SageMaker", "HPC"]
     },
-    {
-        category: "Operating Systems",
-        icon: <Layers size={20} />,
-        skills: ["Windows 10", "Linux", "macOS"]
-    }
 ];
 
 const Skills = () => {
