@@ -67,7 +67,7 @@ const Publications = () => {
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.05 }}
-                        style={{ marginBottom: '16px', color: 'var(--text-secondary)', lineHeight: '1.6' }}
+                        style={{ marginBottom: '20px', paddingLeft: '16px', borderLeft: '2px solid var(--accent-blue)', color: 'var(--text-secondary)', lineHeight: '1.6' }}
                     >
                         {paper}
                     </motion.p>

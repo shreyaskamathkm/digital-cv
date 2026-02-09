@@ -68,8 +68,10 @@ const Awards = () => {
 
                 <div>
                     <h3 style={{ fontSize: '20px', marginBottom: '10px', color: 'var(--text-primary)' }}>Affiliations</h3>
-                    <p style={{ color: 'var(--text-secondary)' }}>Member of IEEE Eta Kappa Nu (IEEE-HKN)</p>
-                    <p style={{ color: 'var(--text-secondary)' }}>Institute of Electrical and Electronics Engineers (IEEE) society</p>
+                    <ul style={{ paddingLeft: '20px', listStyle: 'disc', color: 'var(--text-secondary)' }}>
+                        <li style={{ marginBottom: '8px' }}>Member of IEEE Eta Kappa Nu (IEEE-HKN)</li>
+                        <li>Student Member - Institute of Electrical and Electronics Engineers (IEEE) society</li>
+                    </ul>
                 </div>
             </div>
         </Section>

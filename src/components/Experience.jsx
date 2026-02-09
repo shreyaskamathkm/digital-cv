@@ -80,13 +80,13 @@ const experience = [
         role: "Graduate Research Assistant",
         period: "September 2016 – December 2021",
         details: [
-            "Focused on conducting research in computer vision, image processing, and artificial intelligence for developing applications to solve complex problems faced in multimedia, healthcare, dental, and biometric industries.",
+            "Focused on conducting research in computer vision, image processing, and artificial intelligence for developing applications to solve complex problems faced in multimedia, healthcare, dental, and biometric industries",
             "Secured over $419K in grant funding from NIH – (1R21CA250024) to develop an AI-based dietary composition assessment system",
             "Secured over $10K in grant funding from Tufts Institute for Global Obesity Research 2019",
-            "Performed classification of benign and malignant tumors by utilizing XGBoost algorithm with 90% accuracy at ISIC 2019 challenge.",
-            "Developed a CNN-based system to recognize thermal face emotions with 96.2% accuracy.",
-            "Designed a novel CNN model to perform single image exposure correction by synthesizing multiple exposures.",
-            "Implemented a Quaternion CNN framework for super-resolution matching SOTA metrics with 4x lower parameters."
+            "Performed classification of benign and malignant tumors by utilizing XGBoost algorithm with 90% accuracy at ISIC 2019 challenge",
+            "Developed a CNN-based system to recognize thermal face emotions with 96.2% accuracy",
+            "Designed a novel CNN model to perform single image exposure correction by synthesizing multiple exposures",
+            "Implemented a Quaternion CNN framework for super-resolution matching SOTA metrics with 4x lower parameters"
         ]
     },
     {
@@ -95,9 +95,9 @@ const experience = [
         role: "Graduate Research Assistant",
         period: "October 2015 – February 2016",
         details: [
-            "Focused on research in 3-D and 2-D image processing space to alleviate problems faced in the biometric industry.",
-            "Developed a feedback-based algorithm to enhance fingerprint images by utilizing a novel quality measure.",
-            "Performed fingerprint classification using handcrafted fingerprint features achieving 86.2% accuracy."
+            "Focused on research in 3-D and 2-D image processing space to alleviate problems faced in the biometric industry",
+            "Developed a feedback-based algorithm to enhance fingerprint images by utilizing a novel quality measure",
+            "Performed fingerprint classification using handcrafted fingerprint features achieving 86.2% accuracy"
         ]
     }
 ];
