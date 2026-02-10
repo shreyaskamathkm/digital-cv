@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { initializeAnalytics, trackPageView } from './utils/analytics';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ResearchInterests from './components/ResearchInterests';
@@ -10,6 +11,11 @@ import Awards from './components/Awards';
 import Contact from './components/Contact';
 
 function App() {
+  useEffect(() => {
+    initializeAnalytics();
+    trackPageView(window.location.pathname);
+  }, []);
+
   return (
     <div style={{ opacity: 1, transition: 'opacity 1s ease' }}>
       <Navbar />
