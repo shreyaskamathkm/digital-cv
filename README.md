@@ -76,3 +76,34 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Google Analytics Setup
+
+This project uses `react-ga4` for Google Analytics tracking. To enable it, you need to provide your Measurement ID.
+
+### 1. Get your Measurement ID
+1. Go to [Google Analytics](https://analytics.google.com/).
+2. Create a new property or use an existing one.
+3. Find your **Measurement ID** (format: `G-XXXXXXXXXX`) in Admin > Data Streams.
+
+### 2. Local Development
+1. Create a `.env` file in the root directory (you can use `.env.example` as a template):
+   ```bash
+   cp .env.example .env
+   ```
+2. Add your Measurement ID to the `.env` file:
+   ```env
+   VITE_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
+   ```
+
+### 3. Production (GitHub Pages)
+To enable analytics on your deployed site, you must add the Measurement ID as a GitHub Secret.
+
+1. Go to your repository on GitHub.
+2. Navigate to **Settings** > **Secrets and variables** > **Actions**.
+3. Click **New repository secret**.
+4. Name: `GOOGLE_ANALYTICS_ID`
+5. Value: Your Measurement ID (e.g., `G-XXXXXXXXXX`).
+6. Click **Add secret**.
+
+When you next deploy (push to main), the workflow will automatically inject this ID into the build.
