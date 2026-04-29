@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { initializeAnalytics, trackPageView } from './utils/analytics';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import ImpactStats from './components/ImpactStats';
 import ResearchInterests from './components/ResearchInterests';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
@@ -20,6 +21,7 @@ function App() {
     <div style={{ opacity: 1, transition: 'opacity 1s ease' }}>
       <Navbar />
       <Hero />
+      <ImpactStats />
       <ResearchInterests />
       <Experience />
       <Skills />

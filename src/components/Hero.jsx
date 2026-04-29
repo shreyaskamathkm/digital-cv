@@ -29,14 +29,34 @@ const Hero = () => {
                     Shreyas Kamath
                 </motion.h1>
 
+                <motion.h2
+                    className="hero-role"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.1 }}
+                    style={{ fontSize: '24px', fontWeight: 600, color: 'var(--accent-blue)', marginBottom: '16px' }}
+                >
+                    Senior ML Engineer · SimpliSafe
+                </motion.h2>
+
+                <motion.p
+                    className="hero-mission"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    style={{ maxWidth: '600px', margin: '0 auto 32px', fontSize: '18px', lineHeight: '1.6', color: 'var(--text-secondary)' }}
+                >
+                    Building AI systems that protect over 4 million homes — from the models that detect threats to the infrastructure that trains and deploys them at scale.
+                </motion.p>
+
                 <motion.p
                     className="hero-subtitle"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: [0.2, 0.65, 0.3, 0.9] }}
+                    transition={{ duration: 0.8, delay: 0.3, ease: [0.2, 0.65, 0.3, 0.9] }}
                 >
                     <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                        <Brain size={20} color="#FF6B6B" /> AI Enthusiast
+                        <Brain size={20} color="#FF6B6B" /> AI Expertise
                     </span>
                     <span className="separator" style={{ margin: '0 10px' }}>|</span>
                     <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
@@ -45,10 +65,6 @@ const Hero = () => {
                     <span className="separator" style={{ margin: '0 10px' }}>|</span>
                     <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                         <Cpu size={20} color="#FFE66D" /> Deep Learning
-                    </span>
-                    <br />
-                    <span className="text-gradient" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                        Turning Vision into Reality <Rocket size={20} color="#FF9F1C" />
                     </span>
                 </motion.p>
 

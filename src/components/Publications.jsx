@@ -42,39 +42,131 @@ const selectedPapers = [
 
 const Publications = () => {
     return (
-        <Section id="publications" title="Patents & Publications" layout="side-by-side">
-            <h3 style={{ fontSize: '24px', marginBottom: '24px', color: 'var(--text-primary)' }}>Patents</h3>
-            <div style={{ marginBottom: '60px' }}>
-                {patents.map((item, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.05 }}
-                        style={{ marginBottom: '20px', paddingLeft: '16px', borderLeft: '2px solid var(--accent-blue)' }}
-                    >
-                        <p style={{ color: 'var(--text-primary)', fontWeight: 500, marginBottom: '4px' }}>{item.title}</p>
-                        <p style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>{item.details}</p>
-                    </motion.div>
-                ))}
+        <Section id="publications" title="Research & IP" layout="full-width">
+            {/* Citation Stats Banner */}
+            <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                gap: '20px',
+                marginBottom: '60px',
+                padding: '32px',
+                background: 'rgba(255, 255, 255, 0.02)',
+                borderRadius: '16px',
+                border: '1px solid var(--glass-border)',
+                textAlign: 'center'
+            }}>
+                <div>
+                    <div style={{ fontSize: '24px', fontWeight: 700, color: 'var(--accent-blue)' }}>22</div>
+                    <div style={{ fontSize: '12px', color: 'var(--text-secondary)', textTransform: 'uppercase', marginTop: '4px' }}>Peer-Reviewed Papers</div>
+                </div>
+                <div>
+                    <div style={{ fontSize: '24px', fontWeight: 700, color: 'var(--accent-blue)' }}>533+</div>
+                    <div style={{ fontSize: '12px', color: 'var(--text-secondary)', textTransform: 'uppercase', marginTop: '4px' }}>Research Citations</div>
+                </div>
+                <div>
+                    <div style={{ fontSize: '24px', fontWeight: 700, color: 'var(--accent-blue)' }}>10</div>
+                    <div style={{ fontSize: '12px', color: 'var(--text-secondary)', textTransform: 'uppercase', marginTop: '4px' }}>h-index</div>
+                </div>
+                <div style={{ gridColumn: 'span 1' }}>
+                    <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.2' }}>Top 4% Globally</div>
+                    <div style={{ fontSize: '11px', color: 'var(--text-secondary)', marginTop: '4px' }}>In Computer Science (Clarivate ESI)</div>
+                </div>
             </div>
 
-            <h3 style={{ fontSize: '24px', marginBottom: '24px', color: 'var(--text-primary)' }}>Selected Publications</h3>
-            <div>
-                {selectedPapers.map((paper, index) => (
-                    <motion.p
-                        key={index}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.05 }}
-                        style={{ marginBottom: '20px', paddingLeft: '16px', borderLeft: '2px solid var(--accent-blue)', color: 'var(--text-secondary)', lineHeight: '1.6' }}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '48px' }}>
+                {/* Patents Column */}
+                <div>
+                    <h3 style={{ fontSize: '22px', marginBottom: '24px', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        Patents
+                    </h3>
+                    {patents.map((item, index) => {
+                        const isGranted = item.details.toLowerCase().includes('issued');
+                        return (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                                style={{ 
+                                    marginBottom: '24px', 
+                                    padding: '16px', 
+                                    background: 'var(--card-bg)',
+                                    borderRadius: '12px',
+                                    border: '1px solid var(--glass-border)',
+                                    position: 'relative'
+                                }}
+                            >
+                                <span style={{
+                                    position: 'absolute',
+                                    top: '16px',
+                                    right: '16px',
+                                    fontSize: '10px',
+                                    fontWeight: 700,
+                                    padding: '2px 8px',
+                                    borderRadius: '4px',
+                                    background: isGranted ? 'rgba(78, 205, 196, 0.1)' : 'rgba(191, 90, 242, 0.1)',
+                                    color: isGranted ? '#4ECDC4' : 'var(--accent-purple)',
+                                    border: `1px solid ${isGranted ? 'rgba(78, 205, 196, 0.2)' : 'rgba(191, 90, 242, 0.2)'}`,
+                                    textTransform: 'uppercase'
+                                }}>
+                                    {isGranted ? 'Granted' : 'Pending'}
+                                </span>
+                                <p style={{ color: 'var(--text-primary)', fontWeight: 500, marginBottom: '8px', paddingRight: '70px', fontSize: '15px' }}>{item.title}</p>
+                                <p style={{ color: 'var(--text-secondary)', fontSize: '13px' }}>{item.details}</p>
+                            </motion.div>
+                        );
+                    })}
+                </div>
+
+                {/* Publications Column */}
+                <div>
+                    <h3 style={{ fontSize: '22px', marginBottom: '24px', color: 'var(--text-primary)' }}>Selected Publications</h3>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                        {selectedPapers.map((paper, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                                style={{ 
+                                    padding: '16px', 
+                                    background: 'rgba(255, 255, 255, 0.02)',
+                                    borderRadius: '12px',
+                                    borderLeft: '3px solid var(--accent-blue)',
+                                    color: 'var(--text-secondary)',
+                                    fontSize: '14px',
+                                    lineHeight: '1.6'
+                                }}
+                            >
+                                {paper}
+                            </motion.div>
+                        ))}
+                    </div>
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        style={{ marginTop: '32px', textAlign: 'center' }}
                     >
-                        {paper}
-                    </motion.p>
-                ))}
-                <p style={{ marginTop: '20px', fontStyle: 'italic', color: 'var(--text-secondary)' }}>
-                    ...and many more conference papers. See <a href="https://scholar.google.com/citations?user=dMTASX8AAAAJ" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-blue)' }}>Google Scholar</a> for full list.
-                </p>
+                        <a 
+                            href="https://scholar.google.com/citations?user=dMTASX8AAAAJ" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            style={{ 
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                color: 'var(--accent-blue)',
+                                textDecoration: 'none',
+                                fontWeight: 600,
+                                fontSize: '15px'
+                            }}
+                            onMouseOver={(e) => e.currentTarget.style.textDecoration = 'underline'}
+                            onMouseOut={(e) => e.currentTarget.style.textDecoration = 'none'}
+                        >
+                            Full publication list with citation metrics →
+                        </a>
+                    </motion.div>
+                </div>
             </div>
         </Section>
     );

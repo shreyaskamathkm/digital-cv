@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Code, Database, Terminal } from 'lucide-react';
+import { Github, ExternalLink, Code, Database, Terminal, Eye } from 'lucide-react';
 import Section from './Section';
 
 const projects = [
@@ -18,11 +18,20 @@ const projects = [
         icon: <Code size={24} color="#FF6B6B" />
     },
     {
-        title: "Python Package Blueprint",
-        description: "A comprehensive Cookiecutter template for creating modern, production-ready Python packages. It includes pre-configured setups for CI/CD (GitHub Actions), testing (pytest), linting (Ruff/Black), and documentation, adhering to current industry best practices.",
-        tech: ["Python", "Cookiecutter", "GitHub Actions", "CI/CD", "Packaging"],
-        link: "https://github.com/shreyaskamathkm/python-package-blueprint",
-        icon: <Terminal size={24} color="#FFE66D" />
+        title: "YOLO (v9, v7, YOLO-RD)",
+        description: "A community-maintained, batteries-included implementation of YOLOv9, YOLOv7, and YOLO-RD. Features one-command setup, comprehensive documentation, and automated CI/CD pipelines for robust object detection deployment.",
+        tech: ["Python", "PyTorch", "YOLOv9", "CI/CD", "Docker", "ONNX"],
+        link: "https://github.com/shreyaskamathkm/yolo",
+        stats: "12+ Releases · MIT Licensed",
+        icon: <Eye size={24} color="#4ECDC4" />
+    },
+    {
+        title: "TDFace Database",
+        description: "A large-scale multimodal facial recognition database comprising 100K+ images across 7 imaging modalities — thermal, NIR, 3D, visible, sketch, and more. Now used by 10,000+ researchers across 40+ countries including defense and academic institutions worldwide.",
+        tech: ["Computer Vision", "Biometrics", "Multimodal AI", "Thermal Imaging", "NIR"],
+        link: "https://tdface.ece.tufts.edu/",
+        stats: "10K+ downloads · 40+ countries",
+        icon: <Database size={24} color="#FFE66D" />
     }
 ];
 
@@ -42,7 +51,7 @@ const Projects = () => {
                             background: 'rgba(255, 255, 255, 0.03)',
                             borderRadius: '16px',
                             padding: '24px',
-                            border: '1px solid rgba(255, 255, 255, 0.05)',
+                            border: '1px solid var(--glass-border)',
                             display: 'flex',
                             flexDirection: 'column',
                             height: '100%'
@@ -60,11 +69,11 @@ const Projects = () => {
                                 onMouseOver={(e) => e.target.style.color = '#fff'}
                                 onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}
                             >
-                                <Github size={20} />
+                                {project.link.includes('github.com') ? <Github size={20} /> : <ExternalLink size={20} />}
                             </a>
                         </div>
 
-                        <h3 style={{ fontSize: '20px', fontWeight: 600, marginBottom: '12px', color: '#fff' }}>
+                        <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '8px', color: '#fff' }}>
                             <a
                                 href={project.link}
                                 target="_blank"
@@ -77,7 +86,20 @@ const Projects = () => {
                             </a>
                         </h3>
 
-                        <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: '1.6', marginBottom: '20px', flex: 1 }}>
+                        {project.stats && (
+                            <div style={{
+                                fontSize: '12px',
+                                fontWeight: 600,
+                                color: 'var(--accent-purple)',
+                                marginBottom: '12px',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.5px'
+                            }}>
+                                {project.stats}
+                            </div>
+                        )}
+
+                        <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: '1.6', marginBottom: '20px', flex: 1 }}>
                             {project.description}
                         </p>
 
@@ -86,12 +108,12 @@ const Projects = () => {
                                 <span
                                     key={i}
                                     style={{
-                                        fontSize: '12px',
-                                        padding: '4px 10px',
-                                        borderRadius: '20px',
-                                        background: 'rgba(56, 189, 248, 0.1)',
+                                        fontSize: '11px',
+                                        padding: '3px 8px',
+                                        borderRadius: '4px',
+                                        background: 'rgba(56, 189, 248, 0.05)',
                                         color: 'var(--accent-blue)',
-                                        border: '1px solid rgba(56, 189, 248, 0.2)'
+                                        border: '1px solid rgba(56, 189, 248, 0.1)'
                                     }}
                                 >
                                     {tech}

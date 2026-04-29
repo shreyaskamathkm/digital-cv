@@ -1,39 +1,44 @@
 import Section from './Section';
 import { motion } from 'framer-motion';
-import { Brain, Eye, Cpu } from 'lucide-react';
+import { Brain, Eye, Zap, Database } from 'lucide-react';
 
 const interests = [
     {
-        category: "AI Expertise",
+        category: "AI & Foundation Models",
         icon: <Brain size={24} />,
+        color: 'var(--accent-blue)',
         items: [
-            "Multimodal & VL Models (CLIP, SigLIP 2, Amazon Nova)",
-            "Generative AI (Diffusion, GANs)",
-            "Transformers",
-            "Self-Supervised Learning",
-            "Classical ML & CNNs",
-            "Model Optimization (Quantization, Pruning, ONNX)"
+            "Multimodal & Vision-Language Models (CLIP, SigLIP-2)",
+            "Agentic AI & Autonomous Systems",
+            "Generative AI (Diffusion Models, GANs)",
+            "Transformers & Attention Mechanisms",
+            "Contrastive & Self-Supervised Learning",
+            "Large Language Models applied to Vision"
         ]
     },
     {
         category: "Computer Vision",
         icon: <Eye size={24} />,
+        color: '#4ECDC4',
         items: [
-            "Object Detection & Tracking",
-            "Image & Semantic Segmentation",
+            "Real-Time Object Detection & Tracking",
+            "Semantic & Instance Segmentation",
             "Monocular Depth Estimation",
-            "Motion Detection",
-            "Heterogeneous Matching (Thermal-to-Visible, NIR-to-Visible)"
+            "Heterogeneous Image Matching (Thermal-to-Visible, NIR-to-Visible)",
+            "Biometrics & Multimodal Facial Recognition",
+            "AI for Medical & Nutritional Imaging"
         ]
     },
     {
-        category: "Efficient Edge AI",
-        icon: <Cpu size={24} />,
+        category: "Efficient AI Systems",
+        icon: <Zap size={24} />,
+        color: '#FFE66D',
         items: [
-            "Resource-Constrained Neural Architectures",
-            "Model Compression",
-            "Hybrid Edge-Cloud Systems",
-            "Low-Latency Inference"
+            "On-Device AI for Resource-Constrained Hardware",
+            "Efficient Architecture Design & Neural Search",
+            "Knowledge Distillation & Pruning",
+            "Real-Time Inference at Scale",
+            "Edge-Cloud Hybrid Intelligence"
         ]
     }
 ];
@@ -48,6 +53,7 @@ const ResearchInterests = () => {
                         className="interest-card"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
                         style={{
                             background: 'var(--card-bg)',
@@ -57,9 +63,17 @@ const ResearchInterests = () => {
                             marginBottom: '24px'
                         }}
                     >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px', color: 'var(--accent-blue)' }}>
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '12px',
+                            marginBottom: '16px',
+                            color: interest.color
+                        }}>
                             {interest.icon}
-                            <h3 style={{ fontSize: '20px', color: 'var(--text-primary)' }}>{interest.category}</h3>
+                            <h3 style={{ fontSize: '20px', color: 'var(--text-primary)' }}>
+                                {interest.category}
+                            </h3>
                         </div>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                             {interest.items.map((item, i) => (
@@ -71,7 +85,8 @@ const ResearchInterests = () => {
                                         borderRadius: '20px',
                                         fontSize: '14px',
                                         color: 'var(--text-secondary)',
-                                        border: '1px solid rgba(255,255,255,0.1)'
+                                        border: '1px solid rgba(255,255,255,0.1)',
+                                        lineHeight: '1.4'
                                     }}
                                 >
                                     {item}
