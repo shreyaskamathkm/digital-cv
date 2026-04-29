@@ -30,14 +30,18 @@ function App() {
       <Awards />
       <Contact />
 
-      <footer style={{
-        textAlign: 'center',
-        padding: '40px',
-        color: 'var(--text-secondary)',
-        fontSize: '14px',
-        borderTop: '1px solid var(--glass-border)'
-      }}>
-        <p>&copy; {new Date().getFullYear()} Shreyas Kamath. All rights reserved.</p>
+      <footer
+        style={{
+          textAlign: 'center',
+          padding: '40px',
+          color: 'var(--text-secondary)',
+          fontSize: '14px',
+          borderTop: '1px solid var(--glass-border)',
+        }}
+      >
+        <p>
+          &copy; {new Date().getFullYear()} Shreyas Kamath. All rights reserved.
+        </p>
       </footer>
     </div>
   );
