@@ -11,27 +11,6 @@ import Section from './Section';
 
 const projects = [
   {
-    title: 'Video Similarity Search',
-    description:
-      'A semantic video search engine that allows users to search through video content using natural language queries. It leverages state-of-the-art vision-language models like CLIP to generate embeddings and uses vector databases for high-speed retrieval.',
-    tech: ['Python', 'CLIP', 'Faiss', 'OpenCV', 'PyTorch'],
-    link: 'https://github.com/shreyaskamathkm/Video-Similarity-Search',
-    icon: <Database size={24} color="#4ECDC4" />,
-  },
-  {
-    title: 'FTNet (Feature Transverse Network)',
-    description:
-      'Official PyTorch implementation of the FTNet paper for thermal image semantic segmentation. This novel architecture uses a feature transverse module to capture multi-scale context, significantly improving segmentation accuracy on thermal imagery datasets.',
-    tech: [
-      'PyTorch',
-      'Computer Vision',
-      'Semantic Segmentation',
-      'Deep Learning',
-    ],
-    link: 'https://github.com/shreyaskamathkm/FTNet',
-    icon: <Code size={24} color="#FF6B6B" />,
-  },
-  {
     title: 'YOLO (v9, v7, YOLO-RD)',
     description:
       'A community-maintained, batteries-included implementation of YOLOv9, YOLOv7, and YOLO-RD. Features one-command setup, comprehensive documentation, and automated CI/CD pipelines for robust object detection deployment.',
@@ -54,6 +33,28 @@ const projects = [
     link: 'https://tdface.ece.tufts.edu/',
     stats: '10K+ downloads · 40+ countries',
     icon: <Database size={24} color="#FFE66D" />,
+  },
+  {
+    title: 'FTNet (Feature Transverse Network)',
+    description:
+      'Official PyTorch implementation of the FTNet paper for thermal image semantic segmentation. This novel architecture uses a feature transverse module to capture multi-scale context, significantly improving segmentation accuracy on thermal imagery datasets.',
+    tech: [
+      'PyTorch',
+      'Computer Vision',
+      'Semantic Segmentation',
+      'Deep Learning',
+    ],
+    link: 'https://github.com/shreyaskamathkm/FTNet',
+    stats: 'CVPR 2021',
+    icon: <Code size={24} color="#FF6B6B" />,
+  },
+  {
+    title: 'Video Similarity Search',
+    description:
+      'A semantic video search engine that allows users to search through video content using natural language queries. It leverages state-of-the-art vision-language models like CLIP to generate embeddings and uses vector databases for high-speed retrieval.',
+    tech: ['Python', 'CLIP', 'Faiss', 'OpenCV', 'PyTorch'],
+    link: 'https://github.com/shreyaskamathkm/Video-Similarity-Search',
+    icon: <Database size={24} color="#4ECDC4" />,
   },
 ];
 

@@ -5,11 +5,18 @@ import Section from './Section';
 
 const stats = [
   {
-    icon: <Shield size={32} color="var(--accent-blue)" />,
-    value: 4,
-    suffix: 'M+',
-    label: 'People Protected',
-    description: 'Securing homes across the US & UK',
+    icon: <Globe size={32} color="#FFE66D" />,
+    value: 10,
+    suffix: 'K+',
+    label: 'Global Researchers',
+    description: 'Using TDFace — my multimodal facial recognition database',
+  },
+  {
+    icon: <BookOpen size={32} color="var(--accent-purple)" />,
+    value: 533,
+    suffix: '+',
+    label: 'Research Citations',
+    description: 'Across 22 peer-reviewed papers · h-index 10',
   },
   {
     icon: <TrendingUp size={32} color="#4ECDC4" />,
@@ -17,21 +24,8 @@ const stats = [
     prefix: '$',
     suffix: 'M+',
     label: 'Annual Cost Savings',
-    description: 'Generated via AI optimization',
-  },
-  {
-    icon: <Globe size={32} color="#FFE66D" />,
-    value: 10,
-    suffix: 'K+',
-    label: 'Global Researchers',
-    description: 'Utilizing TDFace infrastructure',
-  },
-  {
-    icon: <BookOpen size={32} color="var(--accent-purple)" />,
-    value: 550,
-    suffix: '+',
-    label: 'Research Citations',
-    description: 'Scholarly impact in Computer Vision',
+    description:
+      'Delivered by replacing a vendor and cutting cloud operator costs',
   },
 ];
 
@@ -78,6 +72,8 @@ const ImpactStats = () => {
           gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
           gap: '16px',
           padding: '20px 0',
+          maxWidth: '1000px',
+          margin: '0 auto',
         }}
         className="impact-grid"
       >
@@ -144,7 +140,7 @@ const ImpactStats = () => {
           __html: `
                 @media (min-width: 768px) {
                     .impact-grid {
-                        grid-template-columns: repeat(4, 1fr) !important;
+                        grid-template-columns: repeat(3, 1fr) !important;
                         gap: 24px !important;
                     }
                 }

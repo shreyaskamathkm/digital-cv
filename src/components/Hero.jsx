@@ -69,9 +69,9 @@ const Hero = () => {
             color: 'var(--text-secondary)',
           }}
         >
-          Building AI systems that protect over 4 million homes — from the
-          models that detect threats to the infrastructure that trains and
-          deploys them at scale.
+          From publishing computer vision research cited by 500+ to building AI
+          models deployed at national scale — I bridge the gap between what's
+          possible in the lab and what works in production.
         </motion.p>
 
         <motion.p
