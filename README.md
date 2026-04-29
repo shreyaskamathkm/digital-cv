@@ -27,12 +27,14 @@ A modern, responsive digital CV/portfolio built with React, Vite, and Framer Mot
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/shreyaskamathkm/digital-cv.git
    cd digital-cv
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
@@ -57,6 +59,7 @@ The output will be in the `dist/` folder.
 This project is configured for deployment to GitHub Pages.
 
 1. Ensure your changes are committed:
+
    ```bash
    git add .
    git commit -m "Update CV"
@@ -68,11 +71,13 @@ This project is configured for deployment to GitHub Pages.
    ```
 
 This command builds the project and pushes the `dist` folder to the `gh-pages` branch. The site will be available at: https://shreyaskamathkm.github.io/digital-cv/
+
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## React Compiler
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
@@ -82,11 +87,13 @@ If you are developing a production application, we recommend using TypeScript wi
 This project uses `react-ga4` for Google Analytics tracking. To enable it, you need to provide your Measurement ID.
 
 ### 1. Get your Measurement ID
+
 1. Go to [Google Analytics](https://analytics.google.com/).
 2. Create a new property or use an existing one.
 3. Find your **Measurement ID** (format: `G-XXXXXXXXXX`) in Admin > Data Streams.
 
 ### 2. Local Development
+
 1. Create a `.env` file in the root directory (you can use `.env.example` as a template):
    ```bash
    cp .env.example .env
@@ -97,6 +104,7 @@ This project uses `react-ga4` for Google Analytics tracking. To enable it, you n
    ```
 
 ### 3. Production (GitHub Pages)
+
 To enable analytics on your deployed site, you must add the Measurement ID as a GitHub Secret.
 
 1. Go to your repository on GitHub.

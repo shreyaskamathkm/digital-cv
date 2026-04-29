@@ -19,18 +19,48 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-color: #050505;
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.1) 0px, transparent 50%), 
+  background-image:
+    radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
     radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
     radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
     radial-gradient(at 0% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
   background-attachment: fixed;
   background-size: 100% 100%;
+  font-family: 'Inter', var(--font-family);
 }
+
+/* Card Styling */
+.card,
+.interest-card,
+.project-card,
+.award-card,
+.impact-card {
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.3s ease !important;
+}
+
+.card:hover,
+.interest-card:hover,
+.project-card:hover,
+.award-card:hover,
+.impact-card:hover {
+  border-color: rgba(41, 151, 255, 0.3) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  transform: translateY(-4px);
+}
+
+/* ... existing styles ... */
 
 /* Optional: Add a very subtle moving mesh/grain if desired, but let's start with this clean aurora look */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.1;
@@ -84,6 +114,7 @@ ul {
 .text-gradient {
   background: linear-gradient(135deg, #fff 0%, #888 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -103,6 +134,14 @@ ul {
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  background: linear-gradient(
+    135deg,
+    var(--text-primary) 0%,
+    var(--accent-blue) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (min-width: 768px) {
@@ -111,12 +150,12 @@ ul {
     gap: 40px; /* Reduced gap slightly to keep connection */
     align-items: start;
   }
-  
+
   .section-header-col {
     position: sticky;
     top: 100px;
   }
-  
+
   .section-title.sticky-title {
     font-size: 24px;
     margin-bottom: 0;

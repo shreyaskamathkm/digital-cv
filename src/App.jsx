@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { initializeAnalytics, trackPageView } from './utils/analytics';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import ImpactStats from './components/ImpactStats';
 import ResearchInterests from './components/ResearchInterests';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
@@ -20,6 +21,7 @@ function App() {
     <div style={{ opacity: 1, transition: 'opacity 1s ease' }}>
       <Navbar />
       <Hero />
+      <ImpactStats />
       <ResearchInterests />
       <Experience />
       <Skills />
@@ -28,14 +30,18 @@ function App() {
       <Awards />
       <Contact />
 
-      <footer style={{
-        textAlign: 'center',
-        padding: '40px',
-        color: 'var(--text-secondary)',
-        fontSize: '14px',
-        borderTop: '1px solid var(--glass-border)'
-      }}>
-        <p>&copy; {new Date().getFullYear()} Shreyas Kamath. All rights reserved.</p>
+      <footer
+        style={{
+          textAlign: 'center',
+          padding: '40px',
+          color: 'var(--text-secondary)',
+          fontSize: '14px',
+          borderTop: '1px solid var(--glass-border)',
+        }}
+      >
+        <p>
+          &copy; {new Date().getFullYear()} Shreyas Kamath. All rights reserved.
+        </p>
       </footer>
     </div>
   );
